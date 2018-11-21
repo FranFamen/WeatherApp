@@ -4,6 +4,9 @@ namespace WeatherApp.ViewModels
 {
 	public class MainWindowViewModel : BindableBase
 	{
+		public MainWindowViewModel()
+		{
+		}
 		
 	}
 }
