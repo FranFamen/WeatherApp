@@ -5,9 +5,9 @@ namespace WeatherApp.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Shell : Window
+    public partial class ShellView : Window
     {
-        public Shell()
+        public ShellView()
         {
             InitializeComponent();
         }

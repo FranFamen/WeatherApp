@@ -13,7 +13,7 @@ namespace WeatherApp
 
         protected override Window CreateShell()
         {
-            return Container.Resolve<Shell>();
+            return Container.Resolve<ShellView>();
         }
     }
 }
