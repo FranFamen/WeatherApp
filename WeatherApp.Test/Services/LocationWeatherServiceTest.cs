@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NSubstitute;
@@ -27,5 +28,18 @@ namespace WeatherApp.Test.Services
 
 			result.Should().Be("https://api.openweathermap.org/data/2.5/weather?q=Warsaw");
 		}
+
+		[Theory]
+		[InlineData(null)]
+		[InlineData("")]
+		[InlineData("        ")]
+		public async Task NullOrEmptyArgumentThrowsException(string invalidName)
+		{
+			await Assert.ThrowsAsync<ArgumentException>(async () =>
+				{
+					await _sut.GetWeatherForNamedLocationAsync(invalidName);
+				});
+		}
+		
 	}
 }

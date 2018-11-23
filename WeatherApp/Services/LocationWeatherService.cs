@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using WeatherApp.Services.Helpers;
 
@@ -17,6 +18,9 @@ namespace WeatherApp.Services
 		
 		public async Task<string> GetWeatherForNamedLocationAsync(string name)
 		{
+			if (string.IsNullOrWhiteSpace(name))
+				throw new ArgumentException("Argument name was null or empty.");
+			
 			var url = AppendUrl(name);
 
 			var result = await _connection.GetAsync(url);
