@@ -14,8 +14,7 @@ namespace WeatherApp.Services
 		{
 			_connection = connection;
 		}
-		
-		
+			
 		public async Task<string> GetWeatherForNamedLocationAsync(string name)
 		{
 			if (string.IsNullOrWhiteSpace(name))
