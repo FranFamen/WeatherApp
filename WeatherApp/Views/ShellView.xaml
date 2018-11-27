@@ -9,5 +9,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBlock x:Name="WeatherJsonTextBlock" Text="{Binding WeatherText, Mode=OneWay}"></TextBlock>
     </Grid>
 </Window>
