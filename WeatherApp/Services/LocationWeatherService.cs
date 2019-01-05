@@ -7,6 +7,7 @@ namespace WeatherApp.Services
 	public class LocationWeatherService : ILocationWeatherService
 	{
 		private const string UrlBase = "https://api.openweathermap.org/data/2.5/weather?q=";
+		private const string ApiKey = "bdc71ed8c311de9acce8ce4c8ab8c7fc";
 		
 		private readonly IHttpConnection _connection;
 

@@ -11,13 +11,7 @@ namespace WeatherApp.Views
         public ShellView()
         {
             InitializeComponent();
-            this.Loaded += async (sender, args) =>
-            {
-                var viewModel = DataContext as ShellViewModel;
-                await viewModel.OnLoadAsync();
-            };
         }
-        
-        
+
     }
 }
