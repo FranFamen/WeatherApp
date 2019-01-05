@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -9,7 +7,6 @@ namespace WeatherApp.ViewModels
 {
 	public class ShellViewModel : BindableBase
 	{
-		private const string London = "London";
 		private readonly ILocationWeatherService _locationWeatherService;
 		private string _weatherText;
 		private string _location;
@@ -25,14 +22,9 @@ namespace WeatherApp.ViewModels
 			GetWeatherCommand = new DelegateCommand(GetWeather);
 		}
 
-		private void GetWeather()
+		private async void GetWeather()
 		{
-			Debug.WriteLine("Twoja stara");
-		}
-
-		public async Task OnLoadAsync()
-		{
-			WeatherText = await _locationWeatherService.GetWeatherForNamedLocationAsync(London);
+			WeatherText = await _locationWeatherService.GetWeatherForNamedLocationAsync(Location);
 		}
 
 		public string WeatherText

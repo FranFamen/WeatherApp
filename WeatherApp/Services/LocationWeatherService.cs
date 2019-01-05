@@ -30,7 +30,7 @@ namespace WeatherApp.Services
 
 		private string AppendUrl(string name)
 		{
-			return UrlBase + name;
+			return UrlBase + name + "&appid=" + ApiKey;
 		}
 	}
 }
