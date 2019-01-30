@@ -10,10 +10,12 @@ namespace WeatherApp.Services
 		private const string ApiKey = "bdc71ed8c311de9acce8ce4c8ab8c7fc";
 		
 		private readonly IHttpConnection _connection;
+		private readonly IJsonConverter _jsonConverter;
 
-		public LocationWeatherService(IHttpConnection connection)
+		public LocationWeatherService(IHttpConnection connection, IJsonConverter jsonConverter)
 		{
 			_connection = connection;
+			_jsonConverter = jsonConverter;
 		}
 			
 		public async Task<string> GetWeatherForNamedLocationAsync(string name)

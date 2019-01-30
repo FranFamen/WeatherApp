@@ -38,6 +38,10 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.8.11\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
     </Reference>
@@ -102,9 +106,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Weather\Clouds.cs" />
+    <Compile Include="Models\Weather\Coordinates.cs" />
+    <Compile Include="Models\Weather\Main.cs" />
+    <Compile Include="Models\Weather\System.cs" />
+    <Compile Include="Models\Weather\Weather.cs" />
+    <Compile Include="Models\Weather\WeatherResponse.cs" />
+    <Compile Include="Models\Weather\Wind.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Services\Helpers\HttpConnection.cs" />
     <Compile Include="Services\Helpers\IHttpConnection.cs" />
+    <Compile Include="Services\Helpers\IJsonConverter.cs" />
+    <Compile Include="Services\Helpers\JsonConverter.cs" />
     <Compile Include="Services\ILocationWeatherService.cs" />
     <Compile Include="Services\LocationWeatherService.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -145,9 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
